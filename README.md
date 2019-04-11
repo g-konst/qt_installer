@@ -21,3 +21,23 @@ Install Qt
 ```bash
 $ ./qt_installer.py -v 5.12.2 -m qtwebengine
 ```
+
+You also need to add `qt.conf` to your application folder.
+```ini
+[Paths]
+Prefix = <PATH_TO_QT>
+Documentation = doc
+Headers = include
+Libraries = lib
+LibraryExecutables = libexec
+Binaries = bin
+Plugins = plugins
+Imports = imports
+Qml2Imports = qml
+ArchData = .
+Data = .
+Translations = translations
+Examples = examples
+Tests = tests
+Settings = .
+```
