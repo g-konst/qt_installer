@@ -38,6 +38,7 @@ def install(params):
 
         print('\033[A\033[1;32mOK\033[0m')
     os.system('echo -n "[Paths]\nPrefix = .." > $PWD/{0}/gcc_64/bin/qt.conf'.format(version))
+    os.system('echo -n "[Paths]\nPrefix = .." > $PWD/{0}/gcc_64/libexec/qt.conf'.format(version))
     fix_license(version)
     print('\033[KInstallation Finished.')
 
