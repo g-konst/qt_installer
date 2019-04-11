@@ -21,6 +21,34 @@ Install Qt
 ```bash
 $ ./qt_installer.py -v 5.12.2 -m qtwebengine
 ```
+Available modules for installation:
+```
+gcc_64 (default)              - Prebuilt Components for Desktop gcc 64-bit
+debug_info                    - Desktop gcc 64-bit Debug Information Files
+qtcharts          [LGPL v3]   - The Qt Charts API lets you easily create interactive and dynamic 2D charts
+                                using C++ and/or Qt Quick.
+qtdatavis3d       [LGPL v3]   - Qt Data Visualization is a module which provides a way to visualize data
+                                in 3D. There are C++ classes and QML types for displaying bar graphs, 
+                                scatter graphs, surface graphs and ways of manipulating the 3D scene. In 
+                                addition, the graphs are fully customizable with different themes.
+qtnetworkauth                 - Qt Network Authorization is an add-on library that enables Qt applications
+                                to use different web authentication systems.
+qtpurchasing                  - Qt Purchasing. Cross-platform APIs for handling in-app purchases on 
+                                Android, iOS and macOS.
+qtscript          [LGPL v2.0] - Qt Script (Deprecated) Prebuilt Components.
+qtvirtualkeyboard [LGPL v3]   - The Qt Virtual Keyboard is a Qt Quick virtual keyboard that you can plug
+                                in to your platform or application. You can extend it with your own 
+                                layouts and styles.
+qtwebengine       [LGPL v2.1] - The Qt WebEngine module integrates the fast moving Chromium web platform
+                                into Qt and provides a convenient API for both Qt Widgets and Qt Quick to
+                                utilize Chromium's web capabilities. Qt WebEngine takes full benefit of 
+                                the whole Qt graphics stack integration allowing seamless mix and overlay
+                                of native Qt controls with web content and OpenGL shaders.
+qtwebplugin       [LGPL v3]   - The Qt WebGL Streaming Plugin is a Qt Platform Abstraction plugin which 
+                                provides streaming of Qt Quick & Qt OpenGL applications over the network
+                                to a WebGL capable browser.
+```
+
 
 You also need to add `qt.conf` to your application folder.
 ```ini
