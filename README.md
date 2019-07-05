@@ -1,8 +1,21 @@
-# qt_installer
+# Qt installer
+
+Installation tool for [Qt](https://www.qt.io/).
+
+## Getting Started
+
+These instruction will get you a copy of the project up and running on your local machine for development purposes.
+
+### Prerequisites
 
 Install dependencies
 ```bash
 $ apt install python3 p7zip-full wget
+```
+
+Clone repo:
+```bash
+$ git clone https://github.com/g-konst/qt_installer && cd qt_installer
 ```
 
 Make virtualenv and install python requirement
@@ -17,10 +30,32 @@ Allow script execution
 $ chmod +x qt_installer.py
 ```
 
-Install Qt
+### Install Qt
+
+To install Qt on your local machine, use the following command:
 ```bash
 $ ./qt_installer.py -v 5.12.2 -m qtwebengine
 ```
+
+Use `help` command to see available arguments:
+```bash
+$ ./qt_installer.py --help
+usage: qt_installer.py [-h] -v VERSION [-m MODULES]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v VERSION, --version VERSION
+                        Qt version <Required>
+  -m MODULES, --modules MODULES
+                        Modules to install
+```
+#### Notes:
+- If the `VERSION` is without a patch value, it should be `0`, e.g.: `5.13.0`.
+- `MODULES` value can be passed miltiple times to install additional modules:
+  ```bash
+  $ ./qt_installer.py -v 5.12.2 -m qtwebengine -m qtnetworkauth
+  ```
+
 Available modules for installation:
 ```
 gcc_64 (default)              - Prebuilt Components for Desktop gcc 64-bit
@@ -49,7 +84,7 @@ qtwebplugin       [LGPL v3]   - The Qt WebGL Streaming Plugin is a Qt Platform A
                                 to a WebGL capable browser.
 ```
 
-
+### After installation
 You also need to add `qt.conf` to your application folder.
 ```ini
 [Paths]
