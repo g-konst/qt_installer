@@ -1,3 +1,5 @@
+[![Donate](https://img.shields.io/badge/PayPal-Donate-coral.svg?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TLYVDH7FVHDLS)
+
 # Qt installer
 
 Installation tool for [Qt](https://www.qt.io/).
