@@ -9,6 +9,7 @@ import requests
 REPO_URL = 'https://download.qt.io/online/qtsdkrepository/linux_x64/desktop'
 ARCH = 'gcc_64'
 
+
 def parse_args():
     parser = argparse.ArgumentParser()
 
@@ -19,6 +20,7 @@ def parse_args():
 
     parser.set_defaults(func=install)
     return parser.parse_args()
+
 
 def install(params):
     version = params.version
@@ -41,6 +43,7 @@ def install(params):
     fix_license(version)
     print('\033[KInstallation Finished.')
 
+
 def get_packages(qt_version, modules):
     xml_url = '/'.join([REPO_URL, 'qt5_' + qt_version, 'Updates.xml'])
     xml_resp = requests.get(xml_url)
@@ -60,6 +63,7 @@ def get_packages(qt_version, modules):
             packages.append({'name': name, 'archives': archives})
     return packages
 
+
 def fix_license(version):
     lic_file = './{}/gcc_64/mkspecs/qconfig.pri'.format(version)
     _lic = open(lic_file, 'r').read()
@@ -68,6 +72,7 @@ def fix_license(version):
         _lic = re.sub(r'(QT_LICHECK\s=\s)\S+', r'\1', _lic, re.I)
         file.write(_lic)
         file.close()
+
 
 if __name__ == '__main__':
     args = parse_args()
