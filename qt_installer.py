@@ -59,7 +59,7 @@ def get_packages(qt_version, modules):
             archives = package.find('DownloadableArchives').text.split(', ')
 
             archives = ['/'.join([REPO_URL, 'qt5_' + qt_version, name,
-                             pkg_version + archive]) for archive in archives]
+                                  pkg_version + archive]) for archive in archives]
             packages.append({'name': name, 'archives': archives})
     return packages
 
